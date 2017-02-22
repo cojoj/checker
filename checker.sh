@@ -34,7 +34,7 @@ vercomp () {
 	return 0
 }
 
-check-xcode() {
+check_xcode() {
 	xversion=$( xcodebuild -version | head -n1 | cut -d ' ' -f2 )
 	vercomp $MIN_XCODE_VERSION $xversion
 	if [ $? -ne 2 ] ; then
@@ -45,7 +45,7 @@ check-xcode() {
 	return 0
 }
 
-check-ruby() {
+check_ruby() {
 	ruby_version=$( ruby -v | cut -d ' ' -f2 | sed 's/.p//' )
 	vercomp $MIN_RUBY_VERSION $ruby_version
 	if [ $? -ne 2 ] ; then
@@ -56,7 +56,7 @@ check-ruby() {
 	return 0
 }
 
-check-git() {
+check_git() {
 	if ! [ -x "$(command -v git)" ] ; then
 		echo "You don't have git installed on your computer"
 		exit 1
@@ -65,7 +65,7 @@ check-git() {
 	return 0
 }
 
-check-cocoapods() {
+check_cocoapods() {
 	if ! [ -x "$(command -v pod)" ] ; then
 		echo "You don't have CocoaPods installed on your computer"
 		echo "Please run this command: gem install cocoapods"
@@ -80,10 +80,12 @@ if 	type xcode-select >&- &&
 	test -d "${xpath}" && 
 	test -x "${xpath}" ; 
 then
-	check-xcode
-	check-git
-	check-ruby
-	check-cocoapods
+	check_xcode
+	check_git
+	check_ruby
+	check_cocoapods
+	
+	echo "Everything's fine! You're ready to go! 🙌"
 else
 	echo "Xcode isn't installed on your computer 😢"
 	exit 1
