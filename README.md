@@ -15,7 +15,7 @@ Right now this script is checking:
 
 To simply run this command you have to:
 ```bash
-curl -s https://github.com/cojoj/checker/checker.sh | sh
+curl -s https://raw.githubusercontent.com/cojoj/checker/master/checker.sh | sh
 ```
 
 Of course you can clone repository, modify something and adjust this script to your needs.
