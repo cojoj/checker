@@ -23,3 +23,7 @@ First step int customisation may be **versions** of software you want to check. 
 
 + `MIN_XCODE_VERSION`
 + `MIN_RUBY_VERSION`
+
+---
+
+Special thanks to [Dennis Williamson](http://stackoverflow.com/users/26428/dennis-williamson) for [this cleaver solution](http://stackoverflow.com/a/4025065/1911042), which I've used for version comparison. 👍
